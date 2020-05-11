@@ -11,10 +11,12 @@
     <title></title>
   </head>
   <body>
+
    <div class="contenitor">
      <div class="row">
        <div class="col">
          <canvas id="line"></canvas>
+         <canvas id="pie"></canvas>
 
        </div>
      </div>

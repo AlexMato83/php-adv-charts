@@ -16,9 +16,9 @@ function getData() {
 
       var ctx = $("#line");
       var myChart = new Chart(ctx, {
-          type: 'line',
+          type: data.type,
           data: {
-              labels: data.labels,
+              labels: ["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"],
               datasets: [{
                   label: '# of Votes',
                   data: data.data,

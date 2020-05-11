@@ -2,10 +2,9 @@
 header('Content-Type: application/json');
 
    include "database.php";
-   $numeri = $data["data"];
-   foreach ($numeri as $numero) {
+       // salvo il primo array
+      $prova = $graphs["fatturato"];
+    
 
-      echo $numero;
-   }
 
-echo json_encode($data);
+echo json_encode($prova);
