@@ -1,0 +1,30 @@
+<<?php
+header('Content-Type: application/json');
+
+   include "database.php";
+   // salvo il secondo array
+      $data = $graphs['fatturato_by_agent'];
+      // stampo il tipo di grafico
+      $type = $data[type];
+      // echo $data[type] . " ";
+      // ciclo
+       // salvo l'array che contiene dati ed etichette
+       $data = $data[data];
+
+       $labels = array_keys($data);
+       $fatturato = array_values($data);
+       // var_dump($fatturato);
+       $fatturatoAgente = [];
+       foreach ($data as $fatturato) {
+         $fatturatoAgente[] = $fatturato;
+       }
+        // var_dump($fatturatoAgente);
+        // echo $key . " ";
+
+
+
+  $results = [$type, $labels, $fatturatoAgente];
+  // echo $results;
+
+echo json_encode($results);
+?php

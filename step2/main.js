@@ -1,6 +1,7 @@
 function init() {
   // console.log("ciao");
   getData();
+  getData2();
 }
 $(document).ready(init);
 
@@ -12,7 +13,7 @@ function getData() {
     method : "GET",
     success : function(data){
 
-      console.log(data);
+      // console.log(data);
 
       var ctx = $("#line");
       var myChart = new Chart(ctx, {
@@ -67,20 +68,23 @@ function getData() {
 function getData2() {
 
   $.ajax({
-    url : "server.php",
+    url : "servertwo.php",
     method : "GET",
     success : function(data){
+       var type = data[0];
+       var labels = data[1];
+       var data = data[2];
 
       console.log(data);
 
       var ctx = $("#pie");
       var myChart = new Chart(ctx, {
-          type: data.type,
+          type: type,
           data: {
-              labels: ["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"],
+              labels: labels,
               datasets: [{
                   label: '# of Votes',
-                  data: data.data,
+                  data: data,
                   backgroundColor: [
                     'rgba(150, 33, 146, 1)',
                     'rgba(82, 40, 204, 1)',

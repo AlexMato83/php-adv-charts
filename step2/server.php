@@ -3,8 +3,8 @@ header('Content-Type: application/json');
 
    include "database.php";
        // salvo il primo array
-      $prova = $graphs["fatturato"];
-    
+      $data = $graphs["fatturato"];
 
 
-echo json_encode($prova);
+
+echo json_encode($data);
