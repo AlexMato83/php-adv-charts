@@ -2,8 +2,14 @@ function init() {
   // console.log("ciao");
   getData();
   getData2();
+  console.log(getMonth());
+  // getMonth();
 }
 $(document).ready(init);
+function getMonth(){
+  moment.locale("it");
+  return moment.months();;
+}
 
 
 function getData() {
@@ -19,7 +25,7 @@ function getData() {
       var myChart = new Chart(ctx, {
           type: data.type,
           data: {
-              labels: ["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio","Agosto","Settembre","Ottobre","Novembre","Dicembre"],
+              labels: getMonth(),
               datasets: [{
                   label: '# of Votes',
                   data: data.data,
